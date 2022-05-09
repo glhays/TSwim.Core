@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using TSwim.Core.Brokers.Storages;
 
 namespace TSwim.Core
 {
@@ -24,6 +25,9 @@ namespace TSwim.Core
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<StorageBroker>();
+            services.AddTransient<IStorageBroker, StorageBroker>();
+
             services.AddSwaggerGen(options =>
             {
                 var openApiInfo = new OpenApiInfo
