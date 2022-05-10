@@ -1,25 +1,25 @@
-name: .NET
-
+name: TSwim Build
 on:
   push:
-    branches: [ main ]
+    branches:
+    - main
   pull_request:
-    branches: [ main ]
-
+    branches:
+    - main
 jobs:
   build:
-
-    runs-on: Windows-2022
-
+    runs-on: windows-2022
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
+    - name: Checking out Code
+      uses: actions/checkout@v2
+    - name: Installing .Net
+      uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.300
-    - name: Restore dependencies
+        include-prerelease: false
+    - name: Restoring Packages
       run: dotnet restore
-    - name: Build
+    - name: Building Project(s)
       run: dotnet build --no-restore
-    - name: Test
+    - name: Running Test(s)
       run: dotnet test --no-build --verbosity normal
