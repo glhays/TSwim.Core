@@ -1,4 +1,5 @@
 ﻿
+using ADotNet.Clients;
 using ADotNet.Models.Pipelines.GithubPipelines.DotNets;
 using ADotNet.Models.Pipelines.GithubPipelines.DotNets.Tasks;
 using ADotNet.Models.Pipelines.GithubPipelines.DotNets.Tasks.SetupDotNetTaskV1s;
@@ -25,8 +26,7 @@ var githubPipeLine = new GithubPipeline
         Build = new BuildJob()
         {
             RunsOn = BuildMachines.Windows2022,
-            TimeoutInMinutes = 3,
-
+            
             Steps = new List<GithubTask>
             {
                 new CheckoutTaskV2
@@ -36,10 +36,11 @@ var githubPipeLine = new GithubPipeline
 
                 new SetupDotNetTaskV1
                 {
+                    Name = "Installing .Net",
+
                     TargetDotNetVersion = new TargetDotNetVersion()
                     {
-                        DotNetVersion = "7.0.100-preview.4.22252.9",
-                        IncludePrerelease = true
+                        DotNetVersion = "6.0.300"
                     }
                 },
 
@@ -62,4 +63,8 @@ var githubPipeLine = new GithubPipeline
     }
 };
 
+var adotNetClient = new ADotNetClient();
+adotNetClient.SerializeAndWriteToFile(
+    githubPipeLine,
+    path: "../../../../.github/workflows/dotnet.yml");
 
