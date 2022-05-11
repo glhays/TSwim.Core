@@ -15,8 +15,8 @@ jobs:
     - name: Installing .Net
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.300
-        include-prerelease: false
+        dotnet-version: 7.0.100-preview.4.22252.9
+        include-prerelease: true
     - name: Restoring Packages
       run: dotnet restore
     - name: Building Project(s)
