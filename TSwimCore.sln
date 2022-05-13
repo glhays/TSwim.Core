@@ -14,7 +14,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Tests.Unit", "TS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Tests.Acceptance", "TSwim.Core.Tests.Acceptance\TSwim.Core.Tests.Acceptance.csproj", "{B4DD24B4-E21B-4524-B6A7-4677D9275247}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSwim.Core.Infrastructure.Build", "TSwim.Core.Infrastructure.Build\TSwim.Core.Infrastructure.Build.csproj", "{39E137CE-9D90-429A-8DD9-CD32F7EA7F93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Infrastructure.Build", "TSwim.Core.Infrastructure.Build\TSwim.Core.Infrastructure.Build.csproj", "{39E137CE-9D90-429A-8DD9-CD32F7EA7F93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSwim.Core.Infrastructure.Provision", "TSwim.Core.Infrastructure.Provision\TSwim.Core.Infrastructure.Provision.csproj", "{BB691844-66D3-4FC4-B432-CF9425FA4A69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{39E137CE-9D90-429A-8DD9-CD32F7EA7F93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39E137CE-9D90-429A-8DD9-CD32F7EA7F93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39E137CE-9D90-429A-8DD9-CD32F7EA7F93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB691844-66D3-4FC4-B432-CF9425FA4A69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB691844-66D3-4FC4-B432-CF9425FA4A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB691844-66D3-4FC4-B432-CF9425FA4A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB691844-66D3-4FC4-B432-CF9425FA4A69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
