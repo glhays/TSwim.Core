@@ -5,15 +5,10 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace TSwim.Core.Tests.Acceptance.Brokers
 {
     [CollectionDefinition(nameof(ApiTestCollection))]
-    public class ApiTestCollection : ICollectionFixture<ApiBroker>{ }
+    public class ApiTestCollection : ICollectionFixture<ApiBroker> { }
 }

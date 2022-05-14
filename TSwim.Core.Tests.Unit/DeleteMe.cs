@@ -5,8 +5,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using Xunit;
 using FluentAssertions;
+using Xunit;
 
 namespace TSwim.Core.Tests.Unit
 {

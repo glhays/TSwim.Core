@@ -6,7 +6,6 @@
 // -----------------------------------------------------------------------------------
 
 using System;
-using System.Threading.Tasks;
 using Microsoft.Azure.Management.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent.Authentication;
