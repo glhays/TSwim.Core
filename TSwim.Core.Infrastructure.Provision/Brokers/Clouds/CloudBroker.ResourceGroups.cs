@@ -24,5 +24,8 @@ namespace TSwim.Core.Infrastructure.Provision.Brokers.Clouds
                 .WithRegion(Region.USWest)
                 .CreateAsync();
         }
+
+        public async ValueTask<bool> CheckResourceGroupAsync(string resourceGroupName) =>
+            await this.azure.ResourceGroups.ContainAsync(resourceGroupName);
     }
 }
