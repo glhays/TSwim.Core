@@ -17,6 +17,9 @@ namespace TSwim.Core.Infrastructure.Provision.Brokers.Clouds
 {
     public partial class CloudBroker
     {
+        public async ValueTask<bool> CheckResourceGroupAsync(string resourceGroupName) =>
+            await this.azure.ResourceGroups.ContainAsync(resourceGroupName);
+
         public async ValueTask<IResourceGroup> CreateResourceGroupAsync(string resourceGroupName)
         {
             return await this.azure.ResourceGroups
@@ -25,7 +28,9 @@ namespace TSwim.Core.Infrastructure.Provision.Brokers.Clouds
                 .CreateAsync();
         }
 
-        public async ValueTask<bool> CheckResourceGroupAsync(string resourceGroupName) =>
-            await this.azure.ResourceGroups.ContainAsync(resourceGroupName);
+        public async ValueTask DeleteResourceGroupAsync(string resourceGroupName)
+        {
+            await this.azure.ResourceGroups.DeleteByNameAsync(resourceGroupName);
+        }
     }
 }
