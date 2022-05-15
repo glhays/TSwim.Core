@@ -6,12 +6,10 @@
 // -----------------------------------------------------------------------------------
 
 using System;
-using System.Threading.Tasks;
 using Microsoft.Azure.Management.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent.Authentication;
 using Microsoft.Azure.Management.ResourceManager.Fluent.Core;
-using Microsoft.Azure.Management.Sql.Fluent;
 
 namespace TSwim.Core.Infrastructure.Provision.Brokers.Clouds
 {
