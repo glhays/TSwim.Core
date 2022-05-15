@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.Azure.Management.ResourceManager.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent.Core;
 using Microsoft.Azure.Management.Sql.Fluent;
+using TSwim.Core.Infrastructure.Provision.Models.Storages;
 
 namespace TSwim.Core.Infrastructure.Provision.Brokers.Clouds
 {
@@ -36,5 +37,15 @@ namespace TSwim.Core.Infrastructure.Provision.Brokers.Clouds
                 .WithExistingSqlServer(sqlServer)
                 .CreateAsync();
         }
+
+        public SqlDatabaseAccess GetDatabaseAccess()
+        {
+            return new SqlDatabaseAccess
+            {
+                AdminName = this.adminName,
+                AdminAccess = this.adminAccess
+            };
+        }
+
     }
 }

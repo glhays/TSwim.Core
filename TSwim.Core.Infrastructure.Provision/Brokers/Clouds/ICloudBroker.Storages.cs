@@ -8,6 +8,7 @@
 using System.Threading.Tasks;
 using Microsoft.Azure.Management.ResourceManager.Fluent;
 using Microsoft.Azure.Management.Sql.Fluent;
+using TSwim.Core.Infrastructure.Provision.Models.Storages;
 
 namespace TSwim.Core.Infrastructure.Provision.Brokers.Clouds
 {
@@ -20,5 +21,7 @@ namespace TSwim.Core.Infrastructure.Provision.Brokers.Clouds
         ValueTask<ISqlDatabase> CreateSqlDatabaseAsync(
             string sqlDatabaseName,
             ISqlServer sqlServer);
+
+        SqlDatabaseAccess GetDatabaseAccess();
     }
 }
