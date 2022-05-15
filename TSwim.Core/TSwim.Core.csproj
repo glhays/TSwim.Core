@@ -3,22 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Designs\**" />
-    <Compile Remove="Models\**" />
-    <Compile Remove="Services\**" />
-    <Content Remove="Designs\**" />
-    <Content Remove="Models\**" />
-    <Content Remove="Services\**" />
-    <EmbeddedResource Remove="Designs\**" />
-    <EmbeddedResource Remove="Models\**" />
-    <EmbeddedResource Remove="Services\**" />
-    <None Remove="Designs\**" />
-    <None Remove="Models\**" />
-    <None Remove="Services\**" />
-  </ItemGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="EFxceptions" Version="0.4.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
@@ -32,6 +17,11 @@
     </PackageReference>
     <PackageReference Include="RESTFulSense" Version="2.4.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectCapability Include="ConfigurableFileNesting" />
+    <ProjectCapability Include="ConfigurableFileNestingFeatureEnabled" />
   </ItemGroup>
 
 </Project>

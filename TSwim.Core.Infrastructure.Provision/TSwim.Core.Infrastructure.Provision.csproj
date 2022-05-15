@@ -11,5 +11,9 @@
     <PackageReference Include="Microsoft.Azure.Management.Fluent" Version="1.38.1" />
     <PackageReference Include="Microsoft.Azure.Management.Search.Fluent" Version="1.38.1" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectCapability Include="ConfigurableFileNesting" />
+    <ProjectCapability Include="ConfigurableFileNestingFeatureEnabled" />
+  </ItemGroup>
 
 </Project>
