@@ -100,7 +100,7 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
                 projectName, sqlServer);
 
             this.loggingBroker.LogActivity(
-                message: $"Provisioning {sqlDatabase} completed.");
+                message: $"Provisioning {databaseName} completed.");
 
             return new SqlDatabase
             {
