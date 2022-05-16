@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.Azure.Management.AppService.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent;
 using Microsoft.Azure.Management.Sql.Fluent;
+using TSwim.Core.Infrastructure.Provision.Models.Storages;
 
 namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManagements
 {
@@ -28,7 +29,7 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
             string environment,
             IResourceGroup resourceGroup);
 
-        ValueTask<ISqlDatabase> ProvisionSqlDatabaseAysnc(
+        ValueTask<SqlDatabase> ProvisionSqlDatabaseAysnc(
             string projectName,
             string environment,
             ISqlServer sqlServer);

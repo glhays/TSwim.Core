@@ -11,6 +11,7 @@ using Microsoft.Azure.Management.ResourceManager.Fluent;
 using Microsoft.Azure.Management.Sql.Fluent;
 using TSwim.Core.Infrastructure.Provision.Brokers.Clouds;
 using TSwim.Core.Infrastructure.Provision.Brokers.Loggings;
+using TSwim.Core.Infrastructure.Provision.Models.Storages;
 
 namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManagements
 {
@@ -54,7 +55,7 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
             this.loggingBroker.LogActivity(
                 message: $"Provisioning {appServicePlanName} ...");
 
-            IAppServicePlan appServicePlan =  await this.cloudBroker.CreatePlanAsync(
+            IAppServicePlan appServicePlan = await this.cloudBroker.CreatePlanAsync(
                 appServicePlanName,
                 resourceGroup);
 
@@ -84,7 +85,7 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
             return sqlServer;
         }
 
-        public async ValueTask<ISqlDatabase> ProvisionSqlDatabaseAysnc(
+        public async ValueTask<SqlDatabase> ProvisionSqlDatabaseAysnc(
             string projectName,
             string environment,
             ISqlServer sqlServer)
@@ -99,9 +100,23 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
                 projectName, sqlServer);
 
             this.loggingBroker.LogActivity(
-                message: $"Provisioning {databaseName} completed.");
+                message: $"Provisioning {sqlDatabase} completed.");
 
-            return sqlDatabase;
+            return new SqlDatabase
+            {
+                Database = sqlDatabase,
+                ConnectionString = GenerateConnectionString(sqlDatabase)
+            };
+        }
+
+        private string GenerateConnectionString(ISqlDatabase sqlDatabase)
+        {
+            SqlDatabaseAccess sqlDatabaseAccess = this.cloudBroker.GetDatabaseAccess();
+
+            return $"Server=tcp:{sqlDatabase.SqlServerName}.database.windows.net,1433;" +
+                $"Initial Catalog={sqlDatabase.Name};" +
+                $"User ID={sqlDatabaseAccess.AdminName};" +
+                $"Password={sqlDatabaseAccess.AdminAccess};";
         }
     }
 }
