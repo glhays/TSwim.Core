@@ -8,6 +8,7 @@
 using System.Threading.Tasks;
 using Microsoft.Azure.Management.AppService.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent;
+using Microsoft.Azure.Management.Sql.Fluent;
 
 namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManagements
 {
@@ -21,5 +22,15 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
             string projectName,
             string environment,
             IResourceGroup resourceGroup);
+
+        ValueTask<ISqlServer> ProvisionSqlServerAsync(
+            string projectName,
+            string environment,
+            IResourceGroup resourceGroup);
+
+        ValueTask<ISqlDatabase> ProvisionSqlDatabaseAysnc(
+            string projectName,
+            string environment,
+            ISqlServer sqlServer);
     }
 }
