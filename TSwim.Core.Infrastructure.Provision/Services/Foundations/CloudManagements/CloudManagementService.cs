@@ -109,6 +109,32 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
             };
         }
 
+
+        public async ValueTask<IWebApp> ProvisionWebAppAsync(
+            string projectName,
+            string environment,
+            string databaseConnectionString,
+            IAppServicePlan appServicePlan,
+            IResourceGroup resourceGroup)
+        {
+            string webAppName = $"{projectName}-{environment}".ToLower();
+
+            this.loggingBroker.LogActivity(
+                message: $"Provisioning {webAppName} ...");
+
+            IWebApp webApp = await this.cloudBroker.CreateWebAppAsync(
+                webAppName,
+                databaseConnectionString,
+                appServicePlan,
+                resourceGroup);
+
+            this.loggingBroker.LogActivity(
+                message: $"Provisioning {webAppName} completed.");
+
+            return webApp;
+
+        }
+
         private string GenerateConnectionString(ISqlDatabase sqlDatabase)
         {
             SqlDatabaseAccess sqlDatabaseAccess = this.cloudBroker.GetDatabaseAccess();

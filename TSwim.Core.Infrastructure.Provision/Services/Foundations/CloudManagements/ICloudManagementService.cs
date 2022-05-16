@@ -33,5 +33,12 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
             string projectName,
             string environment,
             ISqlServer sqlServer);
+    
+        ValueTask<IWebApp> ProvisionWebAppAsync(
+            string projectName,
+            string environment,
+            string databaseConnectionString,
+            IAppServicePlan appServicePlan,
+            IResourceGroup resourceGroup);
     }
 }
