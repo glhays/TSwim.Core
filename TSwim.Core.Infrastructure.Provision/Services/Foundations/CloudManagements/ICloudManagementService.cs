@@ -6,6 +6,7 @@
 // -----------------------------------------------------------------------------------
 
 using System.Threading.Tasks;
+using Microsoft.Azure.Management.AppService.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent;
 
 namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManagements
@@ -15,5 +16,10 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
         ValueTask<IResourceGroup> ProvisionResourceGroupAsync(
             string projectName,
             string environment);
+
+        ValueTask<IAppServicePlan> ProvisionAppServicePlanAsync(
+            string projectName,
+            string environment,
+            IResourceGroup resourceGroup);
     }
 }

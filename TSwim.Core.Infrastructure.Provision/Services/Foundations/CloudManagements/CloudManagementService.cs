@@ -6,6 +6,7 @@
 // -----------------------------------------------------------------------------------
 
 using System.Threading.Tasks;
+using Microsoft.Azure.Management.AppService.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent;
 using TSwim.Core.Infrastructure.Provision.Brokers.Clouds;
 using TSwim.Core.Infrastructure.Provision.Brokers.Loggings;
@@ -22,7 +23,6 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
             this.cloudBroker = new CloudBroker();
             this.loggingBroker = new LoggingBroker();
         }
-
         public async ValueTask<IResourceGroup> ProvisionResourceGroupAsync(
             string projectName,
             string environment)
@@ -41,5 +41,26 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
 
             return resourceGroup;
         }
+
+        public async ValueTask<IAppServicePlan> ProvisionAppServicePlanAsync(
+            string projectName,
+            string environment,
+            IResourceGroup resourceGroup)
+        {
+            string appServicePlanName =
+                $"{projectName}-PLAN-{environment}".ToUpper();
+
+            this.loggingBroker.LogActivity(
+                message: $"Provisioning {appServicePlanName} ...");
+
+            IAppServicePlan appServicePlan =  await this.cloudBroker.CreatePlanAsync(
+                appServicePlanName,
+                resourceGroup);
+
+            this.loggingBroker.LogActivity($"Provisioning {appServicePlanName} completed.");
+
+            return appServicePlan;
+        }
+
     }
 }
