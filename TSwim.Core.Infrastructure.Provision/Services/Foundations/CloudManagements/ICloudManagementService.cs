@@ -40,5 +40,10 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
             string databaseConnectionString,
             IAppServicePlan appServicePlan,
             IResourceGroup resourceGroup);
+
+        ValueTask DeprovisionResourceGroupAsync(
+            string projectName,
+            string environment);
+
     }
 }

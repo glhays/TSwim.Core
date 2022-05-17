@@ -12,7 +12,7 @@ namespace TSwim.Core.Infrastructure.Provision.Brokers.Clouds
 {
     public partial interface ICloudBroker
     {
-        ValueTask<bool> CheckResourceGroupAsync(string resourceGroupName);
+        ValueTask<bool> CheckResourceGroupExistAsync(string resourceGroupName);
         ValueTask<IResourceGroup> CreateResourceGroupAsync(string resourceGroupName);
         ValueTask DeleteResourceGroupAsync(string resourceGroupName);
     }

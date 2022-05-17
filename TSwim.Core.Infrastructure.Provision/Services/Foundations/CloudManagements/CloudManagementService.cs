@@ -134,6 +134,33 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
             return webApp;
 
         }
+        public async ValueTask DeprovisionResourceGroupAsync(
+            string projectName,
+            string environment)
+        {
+            string resourceGroupName =
+                $"{projectName}-RESOURCES-{environment}".ToUpper();
+
+            bool isResourceGroupExist =
+                await this.cloudBroker.CheckResourceGroupExistAsync(resourceGroupName);
+
+            if (isResourceGroupExist)
+            {
+                this.loggingBroker.LogActivity(
+                    message: $"Deprovisioning {resourceGroupName}...");
+
+                await this.cloudBroker.DeleteResourceGroupAsync(resourceGroupName);
+                
+                this.loggingBroker.LogActivity(
+                    message: $"{resourceGroupName} Deprovisioned.");
+            }
+            else
+            {
+                this.loggingBroker.LogActivity(
+                    message: $"Resource group {resourceGroupName} doesn't exist. No action executed.");
+            }
+
+        }
 
         private string GenerateConnectionString(ISqlDatabase sqlDatabase)
         {
@@ -144,5 +171,6 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
                 $"User ID={sqlDatabaseAccess.AdminName};" +
                 $"Password={sqlDatabaseAccess.AdminAccess};";
         }
+
     }
 }
