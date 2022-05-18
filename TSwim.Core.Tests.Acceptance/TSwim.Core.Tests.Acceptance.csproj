@@ -26,4 +26,9 @@
     <ProjectReference Include="..\TSwim.Core\TSwim.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectCapability Include="ConfigurableFileNesting" />
+    <ProjectCapability Include="ConfigurableFileNestingFeatureEnabled" />
+  </ItemGroup>
+
 </Project>

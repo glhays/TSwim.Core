@@ -5,10 +5,11 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using Xunit;
-
-namespace TSwim.Core.Tests.Acceptance.Brokers
+namespace TSwim.Core.Infrastructure.Provision.Models.Storages
 {
-    [CollectionDefinition(nameof(ApiTestCollection))]
-    public class ApiTestCollection : ICollectionFixture<ApiBroker> { }
+    public class SqlDatabaseAccess
+    {
+        public string AdminName { get; set; }
+        public string AdminAccess { get; set; }
+    }
 }

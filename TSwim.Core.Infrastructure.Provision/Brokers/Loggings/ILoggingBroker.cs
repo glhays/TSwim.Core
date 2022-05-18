@@ -5,10 +5,10 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using Xunit;
-
-namespace TSwim.Core.Tests.Acceptance.Brokers
+namespace TSwim.Core.Infrastructure.Provision.Brokers.Loggings
 {
-    [CollectionDefinition(nameof(ApiTestCollection))]
-    public class ApiTestCollection : ICollectionFixture<ApiBroker> { }
+    public interface ILoggingBroker
+    {
+        void LogActivity(string message);
+    }
 }

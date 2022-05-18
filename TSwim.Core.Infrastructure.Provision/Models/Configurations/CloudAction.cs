@@ -5,10 +5,12 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using Xunit;
+using System.Collections.Generic;
 
-namespace TSwim.Core.Tests.Acceptance.Brokers
+namespace TSwim.Core.Infrastructure.Provision.Models.Configurations
 {
-    [CollectionDefinition(nameof(ApiTestCollection))]
-    public class ApiTestCollection : ICollectionFixture<ApiBroker> { }
+    public class CloudAction
+    {
+        public List<string> Environments { get; set; }
+    }
 }

@@ -5,10 +5,14 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using Xunit;
+using System.Threading.Tasks;
+using Microsoft.Azure.Management.AppService.Fluent;
+using Microsoft.Azure.Management.ResourceManager.Fluent;
 
-namespace TSwim.Core.Tests.Acceptance.Brokers
+namespace TSwim.Core.Infrastructure.Provision.Brokers.Clouds
 {
-    [CollectionDefinition(nameof(ApiTestCollection))]
-    public class ApiTestCollection : ICollectionFixture<ApiBroker> { }
+    public partial interface ICloudBroker
+    {
+        ValueTask<IAppServicePlan> CreatePlanAsync(string planName, IResourceGroup resourceGroup);
+    }
 }

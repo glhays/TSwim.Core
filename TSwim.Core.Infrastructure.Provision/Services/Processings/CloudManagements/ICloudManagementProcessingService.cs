@@ -5,10 +5,12 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using Xunit;
+using System.Threading.Tasks;
 
-namespace TSwim.Core.Tests.Acceptance.Brokers
+namespace TSwim.Core.Infrastructure.Provision.Services.Processings.CloudManagements
 {
-    [CollectionDefinition(nameof(ApiTestCollection))]
-    public class ApiTestCollection : ICollectionFixture<ApiBroker> { }
+    public interface ICloudManagementProcessingService
+    {
+        ValueTask ProcessAsync();
+    }
 }
