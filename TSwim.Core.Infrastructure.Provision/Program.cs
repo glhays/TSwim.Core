@@ -6,5 +6,19 @@
 // -----------------------------------------------------------------------------------
 
 using System;
+using System.Threading.Tasks;
+using TSwim.Core.Infrastructure.Provision.Services.Processings.CloudManagements;
 
-Console.WriteLine("Hello, World!");
+namespace TSwim.Core.Infrastructure.Provision
+{
+    internal class Program
+    {
+        static async Task Main(string[] args)
+        {
+            ICloudManagementProcessingService cloudManagementProcessingService = 
+                new CloudManagementProcessingService();
+
+            await cloudManagementProcessingService.ProcessAsync();
+        }
+    }
+}
