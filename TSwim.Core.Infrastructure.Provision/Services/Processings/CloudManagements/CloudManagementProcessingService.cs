@@ -5,7 +5,6 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Azure.Management.AppService.Fluent;
@@ -25,7 +24,7 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Processings.CloudManageme
 
         public CloudManagementProcessingService()
         {
-            this.cloudManagementService = new  CloudManagementService();
+            this.cloudManagementService = new CloudManagementService();
             this.configurationBroker = new ConfigurationBroker();
         }
 
@@ -37,7 +36,12 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Processings.CloudManageme
             await ProvisionAsync(
                     projectName: cloudManagementConfiguration.ProjectName,
                     cloudAction: cloudManagementConfiguration.Up);
+
+            await DeprovisionAsync(
+                projectName: cloudManagementConfiguration.ProjectName,
+                cloudAction: cloudManagementConfiguration.Down);
         }
+
 
         private async ValueTask ProvisionAsync(
             string projectName,
@@ -77,6 +81,20 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Processings.CloudManageme
                         sqlDatabase.ConnectionString,
                         appServicePlan,
                         resourceGroup);
+            }
+        }
+
+        private async ValueTask DeprovisionAsync(
+            string projectName,
+            CloudAction cloudAction)
+        {
+            List<string> environments = RetrieveEnvironments(cloudAction);
+
+            foreach (string environmentName in environments)
+            {
+                await this.cloudManagementService.DeprovisionResourceGroupAsync(
+                    projectName,
+                    environmentName);
             }
         }
 

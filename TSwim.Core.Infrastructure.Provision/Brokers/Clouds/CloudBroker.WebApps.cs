@@ -29,7 +29,7 @@ namespace TSwim.Core.Infrastructure.Provision.Brokers.Clouds
                     name: "DefaultConnection",
                     value: connectionString,
                     type: ConnectionStringType.SQLServer)
-                .CreateAsync();               
+                .CreateAsync();
         }
 
     }

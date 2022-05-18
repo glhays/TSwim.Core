@@ -150,7 +150,7 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
                     message: $"Deprovisioning {resourceGroupName}...");
 
                 await this.cloudBroker.DeleteResourceGroupAsync(resourceGroupName);
-                
+
                 this.loggingBroker.LogActivity(
                     message: $"{resourceGroupName} Deprovisioned.");
             }
@@ -171,6 +171,5 @@ namespace TSwim.Core.Infrastructure.Provision.Services.Foundations.CloudManageme
                 $"User ID={sqlDatabaseAccess.AdminName};" +
                 $"Password={sqlDatabaseAccess.AdminAccess};";
         }
-
     }
 }
