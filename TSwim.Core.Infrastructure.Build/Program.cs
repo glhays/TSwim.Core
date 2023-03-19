@@ -5,6 +5,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
+using System.Collections.Generic;
 using ADotNet.Clients;
 using ADotNet.Models.Pipelines.GithubPipelines.DotNets;
 using ADotNet.Models.Pipelines.GithubPipelines.DotNets.Tasks;
@@ -46,7 +47,7 @@ var githubPipeLine = new GithubPipeline
 
                     TargetDotNetVersion = new TargetDotNetVersion()
                     {
-                        DotNetVersion = "7.0.100-preview.4.22252.9",
+                        DotNetVersion = "7.0.202",
                         IncludePrerelease = true
                     }
                 },
