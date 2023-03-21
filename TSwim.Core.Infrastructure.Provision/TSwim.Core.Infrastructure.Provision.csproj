@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.ResourceManager" Version="1.4.0" />
     <PackageReference Include="Microsoft.Azure.Management.Fluent" Version="1.38.1" />
     <PackageReference Include="Microsoft.Azure.Management.Search.Fluent" Version="1.38.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0-preview.4.22229.4" />
