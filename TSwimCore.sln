@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core", "TSwim.Core\TSwim.Core.csproj", "{8B7F511B-0F6B-492E-AF50-AC943C239F9B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CBBED9B9-AB6B-4800-83F6-1002D5514C89}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
@@ -16,7 +14,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Tests.Acceptance
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Infrastructure.Build", "TSwim.Core.Infrastructure.Build\TSwim.Core.Infrastructure.Build.csproj", "{39E137CE-9D90-429A-8DD9-CD32F7EA7F93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSwim.Core.Infrastructure.Provision", "TSwim.Core.Infrastructure.Provision\TSwim.Core.Infrastructure.Provision.csproj", "{BB691844-66D3-4FC4-B432-CF9425FA4A69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Infrastructure.Provision", "TSwim.Core.Infrastructure.Provision\TSwim.Core.Infrastructure.Provision.csproj", "{BB691844-66D3-4FC4-B432-CF9425FA4A69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSwim.Core.API", "TSwim.Core.API\TSwim.Core.API\TSwim.Core.API.csproj", "{334101B1-C8C1-4982-9807-E278D586A379}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,10 +24,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8B7F511B-0F6B-492E-AF50-AC943C239F9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B7F511B-0F6B-492E-AF50-AC943C239F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B7F511B-0F6B-492E-AF50-AC943C239F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B7F511B-0F6B-492E-AF50-AC943C239F9B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AF805560-35F1-4A82-9B53-DEAF02EADB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AF805560-35F1-4A82-9B53-DEAF02EADB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF805560-35F1-4A82-9B53-DEAF02EADB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -44,6 +40,10 @@ Global
 		{BB691844-66D3-4FC4-B432-CF9425FA4A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB691844-66D3-4FC4-B432-CF9425FA4A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB691844-66D3-4FC4-B432-CF9425FA4A69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{334101B1-C8C1-4982-9807-E278D586A379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{334101B1-C8C1-4982-9807-E278D586A379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{334101B1-C8C1-4982-9807-E278D586A379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{334101B1-C8C1-4982-9807-E278D586A379}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
