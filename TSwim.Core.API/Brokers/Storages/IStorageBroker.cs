@@ -5,15 +5,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using System.Threading.Tasks;
-
-namespace TSwim.Core.Tests.Acceptance.Brokers
+namespace TSwim.Core.API.Brokers.Storages
 {
-    public partial class ApiBroker
-    {
-        private const string HomeRelativeUrl = "api/home";
-
-        public async ValueTask<string> GetHomeMessage() =>
-            await this.apiFactoryClient.GetContentStringAsync(HomeRelativeUrl);
-    }
+    public partial interface IStorageBroker { }
 }

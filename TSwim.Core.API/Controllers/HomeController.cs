@@ -6,14 +6,18 @@
 // -----------------------------------------------------------------------------------
 
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using RESTFulSense.Controllers;
 
-namespace TSwim.Core.Tests.Acceptance.Brokers
+namespace TSwim.Core.API.Controllers
 {
-    public partial class ApiBroker
+    [Route("api/[controller]")]
+    [ApiController]
+    public class HomeController : RESTFulController
     {
-        private const string HomeRelativeUrl = "api/home";
-
-        public async ValueTask<string> GetHomeMessage() =>
-            await this.apiFactoryClient.GetContentStringAsync(HomeRelativeUrl);
+        [HttpGet]
+        public ActionResult<string> Get() => 
+           Ok("Thank you Mario! But the princess is in another castle.");        
     }
 }
