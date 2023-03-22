@@ -25,6 +25,7 @@ namespace TSwim.Core.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -42,7 +43,9 @@ namespace TSwim.Core.API
             }
 
             app.UseHttpsRedirection();
+
             app.UseRouting();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

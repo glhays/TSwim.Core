@@ -15,5 +15,6 @@ namespace TSwim.Core.Tests.Acceptance.Brokers
 
         public async ValueTask<string> GetHomeMessage() =>
             await this.apiFactoryClient.GetContentStringAsync(HomeRelativeUrl);
+
     }
 }

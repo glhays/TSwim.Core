@@ -41,7 +41,7 @@ namespace TSwim.Core.Infrastructure.Provision.Brokers.Clouds
                     tenantId: this.tenantId,
                     environment: AzureEnvironment.AzureGlobalCloud);
 
-            return Azure.Configure()
+            return (IAzure)Azure.Configure()
                 .WithLogLevel(HttpLoggingDelegatingHandler.Level.Basic)
                 .Authenticate(azureCredentials)
                 .WithDefaultSubscription();

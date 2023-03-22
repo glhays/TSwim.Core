@@ -8,7 +8,6 @@
 using System.Net.Http;
 using Microsoft.AspNetCore.Mvc.Testing;
 using RESTFulSense.Clients;
-using TSwim.Core.API;
 
 namespace TSwim.Core.Tests.Acceptance.Brokers
 {
