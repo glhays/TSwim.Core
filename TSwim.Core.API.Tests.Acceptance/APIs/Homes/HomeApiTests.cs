@@ -7,10 +7,10 @@
 
 using System.Threading.Tasks;
 using FluentAssertions;
-using TSwim.Core.Tests.Acceptance.Brokers;
+using TSwim.Core.Api.Tests.Acceptance.Brokers;
 using Xunit;
 
-namespace TSwim.Core.Tests.Acceptance.Apis.Homes
+namespace TSwim.Core.Api.Tests.Acceptance.Apis.Homes
 {
     [Collection(nameof(ApiTestCollection))]
     public class HomeApiTests

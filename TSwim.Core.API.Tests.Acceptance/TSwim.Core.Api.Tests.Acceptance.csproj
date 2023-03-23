@@ -4,7 +4,6 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,12 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TSwim.Core\TSwim.Core.csproj" />
+    <ProjectCapability Include="ConfigurableFileNesting" />
+    <ProjectCapability Include="ConfigurableFileNestingFeatureEnabled" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectCapability Include="ConfigurableFileNesting" />
-    <ProjectCapability Include="ConfigurableFileNestingFeatureEnabled" />
+    <ProjectReference Include="..\TSwim.Core.API\TSwim.Core.API.csproj" />
   </ItemGroup>
 
 </Project>

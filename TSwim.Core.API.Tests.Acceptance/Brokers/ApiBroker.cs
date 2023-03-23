@@ -9,7 +9,7 @@ using System.Net.Http;
 using Microsoft.AspNetCore.Mvc.Testing;
 using RESTFulSense.Clients;
 
-namespace TSwim.Core.Tests.Acceptance.Brokers
+namespace TSwim.Core.Api.Tests.Acceptance.Brokers
 {
     public partial class ApiBroker
     {

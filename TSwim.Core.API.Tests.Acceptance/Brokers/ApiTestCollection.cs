@@ -5,7 +5,10 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-namespace TSwim.Core.Brokers.Storages
+using Xunit;
+
+namespace TSwim.Core.Api.Tests.Acceptance.Brokers
 {
-    public partial interface IStorageBroker { }
+    [CollectionDefinition(nameof(ApiTestCollection))]
+    public class ApiTestCollection : ICollectionFixture<ApiBroker> { }
 }
