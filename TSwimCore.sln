@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Tests.Unit", "TSwim.Core.Tests.Unit\TSwim.Core.Tests.Unit.csproj", "{AF805560-35F1-4A82-9B53-DEAF02EADB1D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Tests.Acceptance", "TSwim.Core.Tests.Acceptance\TSwim.Core.Tests.Acceptance.csproj", "{B4DD24B4-E21B-4524-B6A7-4677D9275247}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Api.Tests.Acceptance", "TSwim.Core.Tests.Acceptance\TSwim.Core.Api.Tests.Acceptance.csproj", "{B4DD24B4-E21B-4524-B6A7-4677D9275247}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Infrastructure.Build", "TSwim.Core.Infrastructure.Build\TSwim.Core.Infrastructure.Build.csproj", "{39E137CE-9D90-429A-8DD9-CD32F7EA7F93}"
 EndProject
