@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TSwim.Core.API\TSwim.Core.API.csproj" />
+    <ProjectReference Include="..\TSwim.Core\TSwim.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
