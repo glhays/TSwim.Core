@@ -10,7 +10,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using TSwim.Core.API.Brokers.Loggings;
+using TSwim.Core.API.Brokers.Storages;
 
 namespace TSwim.Core.API
 {
@@ -24,6 +27,10 @@ namespace TSwim.Core.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<StorageBroker>();
+            services.AddScoped<IStorageBroker, StorageBroker>();
+            services.AddTransient<ILogger, Logger<LoggingBroker>>();
+            services.AddTransient<ILoggingBroker, LoggingBroker>();
 
             services.AddSwaggerGen(c =>
             {
