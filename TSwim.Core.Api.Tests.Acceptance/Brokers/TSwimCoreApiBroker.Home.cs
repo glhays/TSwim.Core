@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace TSwim.Core.Api.Tests.Acceptance.Brokers
 {
-    public partial class ApiBroker
+    public partial class TSwimCoreApiBroker
     {
         private const string HomeRelativeUrl = "api/home";
 

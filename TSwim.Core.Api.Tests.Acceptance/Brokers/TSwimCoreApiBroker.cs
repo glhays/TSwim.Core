@@ -12,13 +12,13 @@ using TSwim.Core.API;
 
 namespace TSwim.Core.Api.Tests.Acceptance.Brokers
 {
-    public partial class ApiBroker
+    public partial class TSwimCoreApiBroker
     {
         private readonly WebApplicationFactory<Startup> webApplicationFactory;
         private readonly HttpClient httpClient;
         private readonly IRESTFulApiFactoryClient apiFactoryClient;
 
-        public ApiBroker()
+        public TSwimCoreApiBroker()
         {
             this.webApplicationFactory = new WebApplicationFactory<Startup>();
             this.httpClient = this.webApplicationFactory.CreateClient();

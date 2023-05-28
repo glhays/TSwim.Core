@@ -15,11 +15,10 @@ namespace TSwim.Core.Api.Tests.Acceptance.Apis.Homes
     [Collection(nameof(ApiTestCollection))]
     public class HomeApiTests
     {
-        private readonly ApiBroker apiBroker;
+        private readonly TSwimCoreApiBroker apiBroker;
 
-        public HomeApiTests(ApiBroker apiBroker) =>
+        public HomeApiTests(TSwimCoreApiBroker apiBroker) =>
             this.apiBroker = apiBroker;
-
 
         [Fact]
         public async Task ShouldReturnHomeMessageAsync()
