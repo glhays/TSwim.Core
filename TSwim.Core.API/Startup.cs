@@ -12,14 +12,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using TSwim.Core.API.Brokers.Loggings;
-using TSwim.Core.API.Brokers.Storages;
+using TSwim.Core.Api.Brokers.Loggings;
+using TSwim.Core.Api.Brokers.Storages;
 
-namespace TSwim.Core.API
+namespace TSwim.Core.Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration) =>        
+        public Startup(IConfiguration configuration) =>
             Configuration = configuration;
 
         public IConfiguration Configuration { get; }
@@ -34,7 +34,7 @@ namespace TSwim.Core.API
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TSwim.Core.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TSwim.Core.Api", Version = "v1" });
             });
         }
 
@@ -44,7 +44,7 @@ namespace TSwim.Core.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TSwim.Core.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TSwim.Core.Api v1"));
             }
 
             app.UseHttpsRedirection();

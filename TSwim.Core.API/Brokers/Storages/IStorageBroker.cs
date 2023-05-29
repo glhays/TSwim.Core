@@ -5,7 +5,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-namespace TSwim.Core.API.Brokers.Storages
+namespace TSwim.Core.Api.Brokers.Storages
 {
     public interface IStorageBroker { }
 }

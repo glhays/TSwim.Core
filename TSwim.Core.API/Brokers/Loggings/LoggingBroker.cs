@@ -8,7 +8,7 @@
 using System;
 using Microsoft.Extensions.Logging;
 
-namespace TSwim.Core.API.Brokers.Loggings
+namespace TSwim.Core.Api.Brokers.Loggings
 {
     public class LoggingBroker : ILoggingBroker
     {

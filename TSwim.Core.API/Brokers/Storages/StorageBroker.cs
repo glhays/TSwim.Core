@@ -9,9 +9,9 @@ using EFxceptions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace TSwim.Core.API.Brokers.Storages
+namespace TSwim.Core.Api.Brokers.Storages
 {
-    public partial class StorageBroker : EFxceptionsContext , IStorageBroker
+    public partial class StorageBroker : EFxceptionsContext, IStorageBroker
     {
         private readonly IConfiguration configuration;
 
