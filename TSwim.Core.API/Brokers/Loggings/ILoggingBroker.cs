@@ -7,7 +7,7 @@
 
 using System;
 
-namespace TSwim.Core.API.Brokers.Loggings
+namespace TSwim.Core.Api.Brokers.Loggings
 {
     public interface ILoggingBroker
     {

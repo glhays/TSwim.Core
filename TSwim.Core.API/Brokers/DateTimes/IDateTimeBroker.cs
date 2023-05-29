@@ -7,7 +7,7 @@
 
 using System;
 
-namespace TSwim.Core.API.Brokers.DateTimes
+namespace TSwim.Core.Api.Brokers.DateTimes
 {
     public interface IDateTimeBroker
     {

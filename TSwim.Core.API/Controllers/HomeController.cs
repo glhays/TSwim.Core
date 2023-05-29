@@ -5,11 +5,10 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RESTFulSense.Controllers;
 
-namespace TSwim.Core.API.Controllers
+namespace TSwim.Core.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

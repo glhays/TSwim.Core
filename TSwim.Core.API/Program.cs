@@ -8,7 +8,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace TSwim.Core.API
+namespace TSwim.Core.Api
 {
     public class Program
     {
