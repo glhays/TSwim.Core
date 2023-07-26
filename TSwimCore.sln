@@ -12,9 +12,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Api.Tests.Unit",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Api.Infrastructure.Build", "TSwim.Core.Api.Infrastructure.Build\TSwim.Core.Api.Infrastructure.Build.csproj", "{39E137CE-9D90-429A-8DD9-CD32F7EA7F93}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Api", "TSwim.Core.Api\TSwim.Core.Api.csproj", "{4121492E-8BD1-4519-BD45-BDBEE749FDAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core", "TSwim.Core.Api\TSwim.Core.csproj", "{4121492E-8BD1-4519-BD45-BDBEE749FDAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSwim.Core.Api.Tests.Acceptance", "TSwim.Core.Api.Tests.Acceptance\TSwim.Core.Api.Tests.Acceptance.csproj", "{F4ECF93D-7F49-4257-8914-16F2C5E5F630}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TSwim.Core.Api.Tests.Acceptance", "TSwim.Core.Api.Tests.Acceptance\TSwim.Core.Api.Tests.Acceptance.csproj", "{F4ECF93D-7F49-4257-8914-16F2C5E5F630}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
