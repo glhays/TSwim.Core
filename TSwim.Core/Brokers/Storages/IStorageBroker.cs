@@ -5,15 +5,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using System;
-
-namespace TSwim.Core.Api.Models
+namespace TSwim.Core.Brokers.Storages
 {
-    public interface IAuditable
-    {
-        DateTimeOffset  CreatedDate { get; set; }
-        DateTimeOffset  UpdatedDate { get; set; }
-        Guid CreatedBy { get; set; }
-        Guid UpdatedBy { get; set; }
-    }
+    public interface IStorageBroker { }
 }

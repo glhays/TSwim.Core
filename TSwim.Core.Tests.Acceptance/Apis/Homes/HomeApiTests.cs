@@ -7,17 +7,17 @@
 
 using FluentAssertions;
 using System.Threading.Tasks;
-using TSwim.Core.Api.Tests.Acceptance.Brokers;
+using TSwim.Core.Tests.Acceptance.Brokers;
 using Xunit;
 
-namespace TSwim.Core.Api.Tests.Acceptance.Apis.Homes
+namespace TSwim.Core.Tests.Acceptance.Apis.Homes
 {
     [Collection(nameof(ApiTestCollection))]
     public partial class HomeApiTests
     {
-        private readonly TSwimCoreApiBroker apiBroker;
+        private readonly TSwimCoreBroker apiBroker;
 
-        public HomeApiTests(TSwimCoreApiBroker apiBroker) =>
+        public HomeApiTests(TSwimCoreBroker apiBroker) =>
             this.apiBroker = apiBroker;
 
         [Fact]

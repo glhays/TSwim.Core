@@ -5,12 +5,17 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using System;
+using Microsoft.AspNetCore.Mvc;
+using RESTFulSense.Controllers;
 
-namespace TSwim.Core.Api.Brokers.DateTimes
+namespace TSwim.Core.Controllers
 {
-    public interface IDateTimeBroker
+    [Route("api/[controller]")]
+    [ApiController]
+    public class HomeController : RESTFulController
     {
-        DateTimeOffset GetCurrentDateTime();
+        [HttpGet]
+        public ActionResult<string> Get() =>
+            Ok("Thank you Mario! But the princess is in another castle.");
     }
 }

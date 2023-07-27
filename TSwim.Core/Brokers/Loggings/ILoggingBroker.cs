@@ -5,15 +5,18 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using System.Threading.Tasks;
+using System;
 
-namespace TSwim.Core.Api.Tests.Acceptance.Brokers
+namespace TSwim.Core.Brokers.Loggings
 {
-    public partial class TSwimCoreApiBroker
+    public interface ILoggingBroker
     {
-        private const string HomeRelativeUrl = "api/home";
+        public void LogInformation(string message);
+        public void LogTrace(string message);
+        public void LogDebug(string message);
+        public void LogWarning(string message);
+        public void LogError(Exception exception);
+        public void LogCritical(Exception exception);
 
-        public async ValueTask<string> GetHomeMessage() =>
-            await this.apiFactoryClient.GetContentStringAsync(HomeRelativeUrl);
     }
 }

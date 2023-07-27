@@ -8,7 +8,7 @@
 using FluentAssertions;
 using Xunit;
 
-namespace TSwim.Core.Api.Tests.Unit
+namespace TSwim.Core.Tests.Unit
 {
     public class DeleteMe
     {

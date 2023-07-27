@@ -12,10 +12,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using TSwim.Core.Api.Brokers.Loggings;
-using TSwim.Core.Api.Brokers.Storages;
+using TSwim.Core.Brokers.Loggings;
+using TSwim.Core.Brokers.Storages;
 
-namespace TSwim.Core.Api
+namespace TSwim.Core
 {
     public class Startup
     {

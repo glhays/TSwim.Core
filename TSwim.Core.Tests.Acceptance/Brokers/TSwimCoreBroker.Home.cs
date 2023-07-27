@@ -5,12 +5,15 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using Xunit;
+using System.Threading.Tasks;
 
-namespace TSwim.Core.Api.Tests.Acceptance.Brokers
+namespace TSwim.Core.Tests.Acceptance.Brokers
 {
-    [CollectionDefinition(nameof(ApiTestCollection))]
-    public class ApiTestCollection : ICollectionFixture<TSwimCoreApiBroker>
+    public partial class TSwimCoreBroker
     {
+        private const string HomeRelativeUrl = "api/home";
+
+        public async ValueTask<string> GetHomeMessage() =>
+            await this.apiFactoryClient.GetContentStringAsync(HomeRelativeUrl);
     }
 }

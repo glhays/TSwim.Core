@@ -5,17 +5,12 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using Microsoft.AspNetCore.Mvc;
-using RESTFulSense.Controllers;
+using Xunit;
 
-namespace TSwim.Core.Api.Controllers
+namespace TSwim.Core.Tests.Acceptance.Brokers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class HomeController : RESTFulController
+    [CollectionDefinition(nameof(ApiTestCollection))]
+    public class ApiTestCollection : ICollectionFixture<TSwimCoreBroker>
     {
-        [HttpGet]
-        public ActionResult<string> Get() =>
-            Ok("Thank you Mario! But the princess is in another castle.");
     }
 }
