@@ -24,8 +24,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\TSwim.Core.Api\TSwim.Core.csproj" />
-  </ItemGroup>
-
 </Project>
