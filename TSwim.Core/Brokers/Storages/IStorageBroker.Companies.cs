@@ -14,6 +14,5 @@ namespace TSwim.Core.Brokers.Storages
     public partial interface IStorageBroker
     {
         ValueTask<Company> InsertCompanyAsync(Company company);
-        IQueryable<Company> GetSelectAllCompanies();
     }
 }
