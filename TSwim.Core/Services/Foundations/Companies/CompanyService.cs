@@ -29,9 +29,7 @@ namespace TSwim.Core.Services.Foundations.Companies
             this.dateTimeBroker = dateTimeBroker;
         }
 
-        public ValueTask<Company> AddCompanyAsync(Company company)
-        {
-            throw new System.NotImplementedException();
-        }
+        public async ValueTask<Company> AddCompanyAsync(Company company) =>
+            await this.storageBroker.InsertCompanyAsync(company);
     }
 }
