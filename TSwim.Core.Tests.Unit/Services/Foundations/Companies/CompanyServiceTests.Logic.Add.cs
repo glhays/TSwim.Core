@@ -21,15 +21,10 @@ namespace TSwim.Core.Tests.Unit.Services.Foundations.Companies
         public async Task ShouldAddCompanyAsync()
         {
             // given
-            DateTimeOffset randomDateTime = GetRandomDateTimeOffset();
-            Company randomCompany = CreateRandomCompany(randomDateTime);
+            Company randomCompany = CreateRandomCompany();
             Company inputCompany = randomCompany;
             Company storageCompany = inputCompany;
             Company expectedCompany = storageCompany.DeepClone();
-
-            this.dateTimeBrokerMock.Setup(broker =>
-                broker.GetCurrentDateTimeOffset())
-                    .Returns(randomDateTime);
 
             this.storageBrokerMock.Setup(broker =>
                 broker.InsertCompanyAsync(inputCompany))
@@ -42,15 +37,10 @@ namespace TSwim.Core.Tests.Unit.Services.Foundations.Companies
             // then
             actualCompany.Should().BeEquivalentTo(expectedCompany);
 
-            this.dateTimeBrokerMock.Verify(broker =>
-                broker.GetCurrentDateTimeOffset(),
-                    Times.Once);
-
             this.storageBrokerMock.Verify(broker =>
                 broker.InsertCompanyAsync(inputCompany),
                     Times.Once);
 
-            this.dateTimeBrokerMock.VerifyNoOtherCalls();
             this.storageBrokerMock.VerifyNoOtherCalls();
             this.loggingBrokerMock.VerifyNoOtherCalls();
         }

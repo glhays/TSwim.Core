@@ -35,18 +35,18 @@ namespace TSwim.Core.Tests.Unit.Services.Foundations.Companies
                 loggingBroker: this.loggingBrokerMock.Object
                 );
         }
-        private static Company CreateRandomCompany(DateTimeOffset dateTimeOffset) =>
-            CreatePostFiller(dateTimeOffset).Create();
+        private static Company CreateRandomCompany() =>
+            CreatePostFiller(dates: GetRandomDateTimeOffset()).Create();
 
         private static DateTimeOffset GetRandomDateTimeOffset() =>
             new DateTimeRange(earliestDate: new DateTime()).GetValue();
 
-        private static Filler<Company> CreatePostFiller(DateTimeOffset dateTimeOffset)
+        private static Filler<Company> CreatePostFiller(DateTimeOffset dates)
         {
             var filler = new Filler<Company>();
 
             filler.Setup()
-                .OnType<DateTimeOffset>().Use(dateTimeOffset);
+                .OnType<DateTimeOffset>().Use(dates);
 
             return filler;
         }
