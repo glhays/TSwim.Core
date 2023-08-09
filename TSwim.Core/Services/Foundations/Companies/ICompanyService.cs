@@ -5,12 +5,13 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using System;
+using System.Threading.Tasks;
+using TSwim.Core.Models.Companies;
 
-namespace TSwim.Core.Brokers.DateTimes
+namespace TSwim.Core.Services.Foundations.Companies
 {
-    public interface IDateTimeBroker
+    public partial interface ICompanyService
     {
-        DateTimeOffset GetCurrentDateTimeOffset();
+        ValueTask<Company> AddCompanyAsync(Company company);
     }
 }
