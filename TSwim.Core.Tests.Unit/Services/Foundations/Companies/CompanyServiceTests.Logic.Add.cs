@@ -5,13 +5,12 @@
 // Licensed under the MIT license. See LICENSE file in the project root for details.
 // -----------------------------------------------------------------------------------
 
-using System;
 using System.Threading.Tasks;
+using FluentAssertions;
 using Force.DeepCloner;
+using Moq;
 using TSwim.Core.Models.Companies;
 using Xunit;
-using Moq;
-using FluentAssertions;
 
 namespace TSwim.Core.Tests.Unit.Services.Foundations.Companies
 {
